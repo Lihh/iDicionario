@@ -15,4 +15,14 @@
 
 - (void) addAlphabetLetter: (NSString *)l andWord: (NSString *)w andImage: (NSString *)i;
 
++ (Alphabet *) sharedInstance;
+
+- (Alphabet *)letterAtIndex:(NSUInteger) i;
+
+- (NSNumber *)count;
+
+- (NSMutableArray *)getAlphabet;
+
+- (Letters *) getLetter;
+
 @end

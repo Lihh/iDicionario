@@ -10,4 +10,9 @@
 
 @interface LettersViewController : UIViewController
 
+@property (nonatomic, strong) UILabel *letterLabel;
+@property (nonatomic, strong) UILabel *wordLabel;
+@property (nonatomic, strong) UIImageView *wordImage;
+
+
 @end

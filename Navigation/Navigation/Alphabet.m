@@ -11,54 +11,79 @@
 
 @implementation Alphabet
 
-static Alphabet *sharedInstance = nil;
+static Alphabet *inst = nil;
 
 - (instancetype) init {
     self = [super init];
     if (self){
         alphabet = [[NSMutableArray alloc] init];
     }
-    [self addAlphabetLetter:@"A" andWord:@"Abacaxi"     andImage:@""];
-    [self addAlphabetLetter:@"B" andWord:@"Bola"        andImage:@""];
-    [self addAlphabetLetter:@"C" andWord:@"Cachorro"    andImage:@""];
-    [self addAlphabetLetter:@"D" andWord:@"Dinossauro"  andImage:@""];
-    [self addAlphabetLetter:@"E" andWord:@"Elefante"    andImage:@""];
-    [self addAlphabetLetter:@"F" andWord:@"Falcao"      andImage:@""];
-    [self addAlphabetLetter:@"G" andWord:@"Gato"        andImage:@""];
-    [self addAlphabetLetter:@"H" andWord:@"Hiena"       andImage:@""];
-    [self addAlphabetLetter:@"I" andWord:@"Iguana"      andImage:@""];
-    [self addAlphabetLetter:@"J" andWord:@"Jabuti"      andImage:@""];
-    [self addAlphabetLetter:@"K" andWord:@"Kiwi"        andImage:@""];
-    [self addAlphabetLetter:@"L" andWord:@"Lobo"        andImage:@""];
-    [self addAlphabetLetter:@"M" andWord:@"Macaco"      andImage:@""];
-    [self addAlphabetLetter:@"N" andWord:@"N"           andImage:@""];
-    [self addAlphabetLetter:@"O" andWord:@"Orangotango" andImage:@""];
-    [self addAlphabetLetter:@"P" andWord:@"Pato"        andImage:@""];
-    [self addAlphabetLetter:@"Q" andWord:@"Abacaxi"     andImage:@""];
-    [self addAlphabetLetter:@"R" andWord:@"Rato"        andImage:@""];
-    [self addAlphabetLetter:@"S" andWord:@"Sapo"        andImage:@""];
-    [self addAlphabetLetter:@"T" andWord:@"Tatu"        andImage:@""];
-    [self addAlphabetLetter:@"U" andWord:@"Uva"         andImage:@""];
-    [self addAlphabetLetter:@"V" andWord:@"Vaca"        andImage:@""];
-    [self addAlphabetLetter:@"W" andWord:@"W"           andImage:@""];
-    [self addAlphabetLetter:@"X" andWord:@"X"           andImage:@""];
-    [self addAlphabetLetter:@"Y" andWord:@"Y"           andImage:@""];
-    [self addAlphabetLetter:@"Z" andWord:@"Zebra"       andImage:@""];
+    [self addAlphabetLetter:@"A" andWord:@"Abacaxi"     andImage:@"abacaxi"];
+    [self addAlphabetLetter:@"B" andWord:@"Bola"        andImage:@"bola"];
+    [self addAlphabetLetter:@"C" andWord:@"Cachorro"    andImage:@"cachorro"];
+    [self addAlphabetLetter:@"D" andWord:@"Dinossauro"  andImage:@"dinossauro"];
+    [self addAlphabetLetter:@"E" andWord:@"Elefante"    andImage:@"elefante"];
+    [self addAlphabetLetter:@"F" andWord:@"Foca"        andImage:@"foca"];
+    [self addAlphabetLetter:@"G" andWord:@"Gato"        andImage:@"gato"];
+    [self addAlphabetLetter:@"H" andWord:@"Hipopotamo"  andImage:@"hipopotamo"];
+    [self addAlphabetLetter:@"I" andWord:@"Iguana"      andImage:@"iguana"];
+    [self addAlphabetLetter:@"J" andWord:@"Jacare"      andImage:@"jacare"];
+    [self addAlphabetLetter:@"K" andWord:@"Kiwi"        andImage:@"kiwi"];
+    [self addAlphabetLetter:@"L" andWord:@"Lobo"        andImage:@"lobo"];
+    [self addAlphabetLetter:@"M" andWord:@"Macaco"      andImage:@"macaco"];
+    [self addAlphabetLetter:@"N" andWord:@"Navio"       andImage:@"navio"];
+    [self addAlphabetLetter:@"O" andWord:@"Orca"        andImage:@"orca"];
+    [self addAlphabetLetter:@"P" andWord:@"Pato"        andImage:@"pato"];
+    [self addAlphabetLetter:@"Q" andWord:@"Quati"       andImage:@"quati"];
+    [self addAlphabetLetter:@"R" andWord:@"Rato"        andImage:@"rato"];
+    [self addAlphabetLetter:@"S" andWord:@"Sapo"        andImage:@"sapo"];
+    [self addAlphabetLetter:@"T" andWord:@"Tigre"       andImage:@"tigre"];
+    [self addAlphabetLetter:@"U" andWord:@"Urso"        andImage:@"urso"];
+    [self addAlphabetLetter:@"V" andWord:@"Vaca"        andImage:@"vaca"];
+    [self addAlphabetLetter:@"W" andWord:@"Waffle"      andImage:@"waffle"];
+    [self addAlphabetLetter:@"X" andWord:@"Xilofone"    andImage:@"xilofone"];
+    [self addAlphabetLetter:@"Y" andWord:@"Yakult"      andImage:@"yakult"];
+    [self addAlphabetLetter:@"Z" andWord:@"Zebra"       andImage:@"zebra"];
     
     return self;
 }
 
-+ (Alphabet *) instance{
-    if (sharedInstance == nil){
-        sharedInstance = [[Alphabet alloc] init];
++ (Alphabet *) sharedInstance{
+    if (inst == nil){
+        inst = [[Alphabet alloc] init];
     }
-    return sharedInstance;
+    return inst;
 }
 
 
--(void)addAlphabetLetter:(NSString *)l andWord:(NSString *)w andImage:(UIImage *)i{
+-(void)addAlphabetLetter:(NSString *)l andWord:(NSString *)w andImage:(NSString *)i{
     Letters *a = [[Letters alloc] initWithLetter:l andWord:w andImage:i];
     [alphabet addObject:a];
+}
+
+
+- (Alphabet *) letterAtIndex:(NSUInteger) i
+{
+    return [alphabet objectAtIndex:i];
+}
+
+
+- (NSNumber *)count{
+    return [NSNumber numberWithInteger:[alphabet count]];
+}
+
+-(NSMutableArray *) getAlphabet
+{
+    return alphabet;
+}
+
+
+- (Letters *) getLetter {
+    Letters *letra = [[Letters alloc] init];
+    return letra.letter;
+    return letra.word;
+    return letra.image;
+    
 }
 
 @end

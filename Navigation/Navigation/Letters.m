@@ -12,7 +12,7 @@
 
 @synthesize letter, word, image;
 
--(instancetype)initWithLetter:(NSString *)l andWord:(NSString *)w andImage:(UIImage *)i{
+-(instancetype)initWithLetter:(NSString *)l andWord:(NSString *)w andImage:(NSString *)i{
     self = [super init];
     if (self){
         letter = l;

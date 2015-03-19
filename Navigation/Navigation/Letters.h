@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LettersViewController.h"
 
 @interface Letters : NSObject{
     NSString *letter;
     NSString *word;
-    UIImage *image;
+    NSString *image;
 }
 
--(instancetype)initWithLetter: (NSString *)l andWord: (NSString *)w andImage: (UIImage *)i;
+-(instancetype)initWithLetter: (NSString *)l andWord: (NSString *)w andImage: (NSString *)i;
 
 @property NSString *letter;
 @property NSString *word;
-@property UIImage *image;
+@property NSString *image;
 
 @end
