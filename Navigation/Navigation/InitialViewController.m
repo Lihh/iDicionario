@@ -31,6 +31,7 @@
     label.center = self.view.center;
     
     [self.view addSubview:label];
+    
 
 }
 

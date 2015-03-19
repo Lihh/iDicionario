@@ -31,6 +31,8 @@ int indexAlphabet = 0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     alphabet = [Alphabet sharedInstance];
     todasLetras = [alphabet getAlphabet];
 
@@ -50,10 +52,7 @@ int indexAlphabet = 0;
     
     //inicializando e ajustando a imagem na tela
     wordImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2 - 100, 230, 200, 200)];
-    
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    wordImage.backgroundColor = [UIColor whiteColor];
     
     //adicionando as Labels e a imagem
     [self.view addSubview:letterLabel];
@@ -70,6 +69,14 @@ int indexAlphabet = 0;
     [self.wordLabel setText:letraAtual.word];
     [self.wordImage setImage:[UIImage imageNamed:letraAtual.image]];
     
+    //adicionando animação a cada mudança de letra
+    CATransition *mudaTela = [CATransition animation];
+    mudaTela.duration = 1;
+    mudaTela.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseIn];
+    mudaTela.delegate = self;
+    [self.navigationController.view.layer addAnimation:mudaTela forKey:nil];
+    
+    
     NSLog(@"index: %i", indexAlphabet);
     NSLog(@"letra: %@", letterLabel.text);
     NSLog(@"palavra: %@", wordLabel.text);
@@ -79,18 +86,17 @@ int indexAlphabet = 0;
     
     UIBarButtonItem *next = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self action:@selector(next:)];
-    self.navigationItem.rightBarButtonItem=next;
+    self.navigationItem.rightBarButtonItem = next;
     
     UIBarButtonItem *back = [[UIBarButtonItem alloc]
                              initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self action:@selector(back:)];
-    self.navigationItem.leftBarButtonItem=back;
+    self.navigationItem.leftBarButtonItem = back;
 
     UIButton *botao = [UIButton buttonWithType:UIButtonTypeSystem];
     [botao setTitle:wordLabel.text forState:UIControlStateNormal];
     [botao sizeToFit];
     [self.view addSubview:botao];
     
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,15 +109,14 @@ int indexAlphabet = 0;
             [self.navigationController popToRootViewControllerAnimated:YES];
             indexAlphabet = 0;
             
-    
         } else {
-            
             indexAlphabet ++;
             LettersViewController *proximo = [[LettersViewController alloc]
                                               initWithNibName:nil
                                               bundle:NULL];
             [self.navigationController pushViewController:proximo
                                                  animated:YES];
+            
             //tira a instancia anterior da pilha
             [self.navigationController popViewControllerAnimated:NO];
         }
@@ -125,20 +130,18 @@ int indexAlphabet = 0;
     if (indexAlphabet == 0) {
         [self.navigationController popToRootViewControllerAnimated:YES];
         
-        
     } else {
-        
         indexAlphabet --;
         LettersViewController *proximo = [[LettersViewController alloc]
                                           initWithNibName:nil
                                           bundle:NULL];
         [self.navigationController pushViewController:proximo
                                              animated:YES];
+        
         //tira a instancia anterior da pilha
         [self.navigationController popViewControllerAnimated:NO];
         
     }
-    
     
     NSLog(@"%i", indexAlphabet);
 
