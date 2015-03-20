@@ -7,27 +7,43 @@
 //
 
 #import "MackenzieAppDelegate.h"
-#import "InitialViewController.h"
 
 @implementation MackenzieAppDelegate
 
+@synthesize tableView, tabBarController, navigationController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-     InitialViewController *viewController = [[InitialViewController alloc]
-                                              initWithNibName:nil
-                                              bundle:nil];
     
+    InitialViewController *viewController = [[InitialViewController alloc]
+                                             initWithNibName:nil bundle:nil];
+    tableView = [[DictionaryTableViewController alloc] init];
     
-    self.navigationController = [[UINavigationController alloc]
+    //navigationController
+    navigationController = [[UINavigationController alloc]
                                  initWithRootViewController:viewController];
+    
+    //tabBar
+    tabBarController = [[UITabBarController alloc] init];
+    [tabBarController setViewControllers: @[navigationController, tableView] animated:YES];
+    
+    //tabBarItens
+    [[tabBarController.tabBar.items objectAtIndex:0] setTitle:@"Inicio"];
+    //[[self.tabBarController.tabBar.items objectAtIndex:0] setImage:];
+    [[tabBarController.tabBar.items objectAtIndex:1] setTitle:@"Lista"];
+    
+    
+    
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationController;
 
-
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = tabBarController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

@@ -12,7 +12,6 @@
 
 @interface LettersViewController () {
     Alphabet *alphabet;
-    
 }
 
 @end
@@ -22,6 +21,7 @@
     NSMutableArray *arrayAlph;
     Letters *letraAtual;
 }
+
 //Declara fora do DidLoad pq quando chama a view, não reinicializa como 0
 int indexAlphabet = 0;
 
@@ -38,7 +38,7 @@ int indexAlphabet = 0;
 
     arrayAlph = [[NSMutableArray alloc] initWithArray:self.navigationController.viewControllers];
     
-    //inicializando e ajustando a Letra na tela
+    //inicializando e ajustando a letra na tela
     letterLabel = [[UILabel alloc] init];
     letterLabel.textAlignment = NSTextAlignmentCenter;
     letterLabel.backgroundColor = [UIColor blueColor];

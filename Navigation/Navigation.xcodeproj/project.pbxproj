@@ -11,6 +11,7 @@
 		025C48431AB702050027F1C2 /* LettersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C48421AB702050027F1C2 /* LettersViewController.m */; };
 		025C48461AB70A6F0027F1C2 /* Alphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C48451AB70A6F0027F1C2 /* Alphabet.m */; };
 		025C48491AB7144A0027F1C2 /* Letters.m in Sources */ = {isa = PBXBuildFile; fileRef = 025C48481AB7144A0027F1C2 /* Letters.m */; };
+		02B8E96D1ABB618400D6DB6B /* DictionaryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B8E96C1ABB618400D6DB6B /* DictionaryTableViewController.m */; };
 		27156F4D18B76AF50053A99C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F4C18B76AF50053A99C /* Foundation.framework */; };
 		27156F4F18B76AF50053A99C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F4E18B76AF50053A99C /* CoreGraphics.framework */; };
 		27156F5118B76AF50053A99C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27156F5018B76AF50053A99C /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 		025C48451AB70A6F0027F1C2 /* Alphabet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alphabet.m; sourceTree = "<group>"; };
 		025C48471AB7144A0027F1C2 /* Letters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letters.h; sourceTree = "<group>"; };
 		025C48481AB7144A0027F1C2 /* Letters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letters.m; sourceTree = "<group>"; };
+		02B8E96B1ABB618400D6DB6B /* DictionaryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryTableViewController.h; sourceTree = "<group>"; };
+		02B8E96C1ABB618400D6DB6B /* DictionaryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DictionaryTableViewController.m; sourceTree = "<group>"; };
 		27156F4918B76AF50053A99C /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27156F4C18B76AF50053A99C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27156F4E18B76AF50053A99C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				025C483F1AB701B50027F1C2 /* InitialViewController.m */,
 				025C48411AB702050027F1C2 /* LettersViewController.h */,
 				025C48421AB702050027F1C2 /* LettersViewController.m */,
+				02B8E96B1ABB618400D6DB6B /* DictionaryTableViewController.h */,
+				02B8E96C1ABB618400D6DB6B /* DictionaryTableViewController.m */,
 				025C48471AB7144A0027F1C2 /* Letters.h */,
 				025C48481AB7144A0027F1C2 /* Letters.m */,
 				025C48441AB70A6F0027F1C2 /* Alphabet.h */,
@@ -264,6 +269,7 @@
 				025C48401AB701B50027F1C2 /* InitialViewController.m in Sources */,
 				27156F5D18B76AF50053A99C /* MackenzieAppDelegate.m in Sources */,
 				025C48491AB7144A0027F1C2 /* Letters.m in Sources */,
+				02B8E96D1ABB618400D6DB6B /* DictionaryTableViewController.m in Sources */,
 				025C48461AB70A6F0027F1C2 /* Alphabet.m in Sources */,
 				27156F5918B76AF50053A99C /* main.m in Sources */,
 			);

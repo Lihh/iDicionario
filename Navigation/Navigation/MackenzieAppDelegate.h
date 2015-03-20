@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InitialViewController.h"
+#import "DictionaryTableViewController.h"
 
 @interface MackenzieAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) UINavigationController *navigationController;
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) UITableViewController *tableView;
 
 
 @end
